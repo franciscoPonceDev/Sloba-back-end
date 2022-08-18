@@ -10,4 +10,9 @@ Rails.application.routes.draw do
                        sessions: 'users/sessions',
                        registrations: 'users/registrations'
                      }
+
+    namespace :v1, defaults: { format: :json } do
+      resources :bids, only: %i[index show create]
+      resources :auctions, only: %i[index show create update destroy]
+    end
 end
