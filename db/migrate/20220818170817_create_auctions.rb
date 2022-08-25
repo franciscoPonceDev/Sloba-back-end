@@ -4,6 +4,7 @@ class CreateAuctions < ActiveRecord::Migration[7.0]
       t.string :title, null: false
       t.string :description, null: false
       t.datetime :end_date
+      t.integer :status, default: 0, null: false
 
       t.timestamps
     end
